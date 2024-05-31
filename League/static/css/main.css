@@ -1,0 +1,61 @@
+body {
+    background-image: url("../images/img_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 100%; /* Rasmning pastki qismini ko'rsatish uchun */
+}
+
+.team-home-picture {
+    height: 230px;
+}
+
+/* css/main.css */
+.table-container {
+    max-width: 800px; /* Jadval kengligini kerakli qiymatga o'zgartiring */
+    margin: 0 auto;  /* Jadvalni markazga joylashtirish */
+}
+
+.player-card {
+  display: flex;
+
+  background-color: #fff;
+
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.player-image {
+  flex: 0 0 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.player-info h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

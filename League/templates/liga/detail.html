@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #333;
+        }
+        .club-info {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .club-logo {
+            width: 50%;
+            height: auto;
+            margin-right: 20px;
+        }
+        .club-details {
+            flex: 1;
+        }
+        .club-name {
+            font-size: 2em;
+            color: #333;
+            margin: 0;
+        }
+        .description {
+            margin-top: 30px;
+        }
+        .description h2 {
+            color: #333;
+        }
+        .description p {
+            line-height: 1.6;
+        }
+        .club-image {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Futbol Klubi Detallari</h1>
+        </header>
+        <div class="club-info">
+            <img src="{{team_detail.image.url}}"alt="Klub Rasmi" class="club-logo club-image">
+            <div class="club-details">
+                <h2 class="club-name">{{team_detail.name}}</h2>
+                <div class="description">
+                    <h2>Klub Haqida</h2>
+                    <p>Futbol klubi 1920-yilda tashkil etilgan bo'lib, o'zining uzoq va boy tarixiga ega. Klub bir necha marotaba milliy chempionlikni qo'lga kiritgan va xalqaro musobaqalarda muvaffaqiyatli qatnashgan. Klubning asosiy maqsadi milliy chempionlikni qo'lga kiritish va xalqaro musobaqalarda muvaffaqiyatli qatnashishdir. Shuningdek, yosh futbolchilarni tarbiyalash va ularning rivojlanishiga hissa qo'shish ham klubning asosiy strategiyalaridan biridir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% for player in players %}
+<div class="player-card">
+  <div class="player-image">
+    <img src="{{ player.image.url }}" alt="{{ player.first_name }} {{ player.last_name }}">
+  </div>
+  <div class="player-info">
+    <h3>{{ player.first_name }} {{ player.last_name }}</h3>
+    <p>Team: {{ player.team }}</p>
+    <p>Date of Birth: {{ player.date_of_birth|date:"d M Y" }}</p>
+  </div>
+</div>
+    {% endfor %}
+{% endblock content %}
